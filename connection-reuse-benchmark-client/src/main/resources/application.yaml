@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: connection-reuse-benchmark-client
+  main:
+    web-application-type: none
+
+benchmark:
+  warmup-requests: 100
+  requests: 1000
+  concurrency: 16
+  payload-bytes: 256
+  timeout-millis: 3000
+  http-base-url: http://127.0.0.1:18080
+  grpc-host: 127.0.0.1
+  grpc-port: 19090
+
+stellflux:
+  opentelemetry:
+    resource:
+      service-name: connection-reuse-benchmark-client
+    logs:
+      enabled: false
+    metrics:
+      enabled: false
+    traces:
+      enabled: false

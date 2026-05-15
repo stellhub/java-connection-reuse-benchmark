@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: connection-reuse-benchmark-server
+
+server:
+  port: 18080
+  tomcat:
+    keep-alive-timeout: 60s
+    max-keep-alive-requests: 100000
+
+stellflux:
+  grpc:
+    server:
+      port: 19090
+      permit-keep-alive-without-calls: true
+  opentelemetry:
+    resource:
+      service-name: connection-reuse-benchmark-server
+    logs:
+      enabled: false
+    metrics:
+      enabled: false
+    traces:
+      enabled: false
